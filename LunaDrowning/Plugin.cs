@@ -90,6 +90,7 @@ namespace LunaDrowning
                             if (!KillOnDrown.Value)
                             {
                                 InWaterSec = 0;
+                                RemainingOxygen = InitialOxygen.Value;
                                 AirMeterObject.SetActive(false);
                                 PhotonNetwork.Disconnect();
                                 DrownWarningSource.PlayOneShot(DrownDieClip);
