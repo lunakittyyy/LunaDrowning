@@ -58,8 +58,7 @@ namespace LunaDrowning
             textObject.transform.SetParent(AirMeterObject.transform, false);
             textObject.AddComponent<CanvasRenderer>();
             MeterText = textObject.AddComponent<Text>();
-            // TODO: Is there a better way to find a ref for the outlined font?
-            MeterText.font = GameObject.Find("Global/Local VRRig/Local Gorilla Player/rig/NameTagAnchor/NameTagCanvas/Text/").GetComponent<Text>().font;
+            MeterText.font = GorillaTagger.Instance.offlineVRRig.playerText.font;
             MeterText.text = $"Air: {RemainingOxygen}/{InitialOxygen.Value}";
             AirMeterObject.SetActive(false);
 
